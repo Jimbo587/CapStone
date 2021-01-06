@@ -6,13 +6,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "reviewTable")
 data class Review (
-    @ColumnInfo(name = "reminder")
+    @ColumnInfo(name = "name")
     var name: String,
 
-    @ColumnInfo(name = "reminder")
+    @ColumnInfo(name = "rating")
     var rating: Int,
 
-    @ColumnInfo(name = "reminder")
+    @ColumnInfo(name = "review")
     var review: String,
 
     @PrimaryKey(autoGenerate = true)

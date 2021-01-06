@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_movieInfoFragment"
+            app:destination="@id/movieInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -29,12 +32,23 @@
         android:id="@+id/movieInfoFragment"
         android:name="com.example.capstone.ui.MovieInfoFragment"
         android:label="fragment_movie_info"
-        tools:layout="@layout/fragment_movie_info" />
+        tools:layout="@layout/fragment_movie_info" >
+        <action
+            android:id="@+id/action_movieInfoFragment_to_movieRateFragment"
+            app:destination="@id/movieRateFragment" />
+        <action
+            android:id="@+id/action_movieInfoFragment_to_movieReviewFragment"
+            app:destination="@id/movieReviewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/movieRateFragment"
         android:name="com.example.capstone.ui.MovieRateFragment"
         android:label="fragment_movie_rate"
-        tools:layout="@layout/fragment_movie_rate" />
+        tools:layout="@layout/fragment_movie_rate" >
+        <action
+            android:id="@+id/action_movieRateFragment_to_movieReviewFragment"
+            app:destination="@id/movieReviewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/movieReviewFragment"
         android:name="com.example.capstone.ui.MovieReviewFragment"

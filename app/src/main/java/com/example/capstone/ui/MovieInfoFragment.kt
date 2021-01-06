@@ -21,9 +21,12 @@ class MovieInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //TODO: change button value and navigate
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        view.findViewById<Button>(R.id.btnRate).setOnClickListener {
+            findNavController().navigate(R.id.action_movieInfoFragment_to_movieRateFragment)
+        }
+
+        view.findViewById<Button>(R.id.btnReview).setOnClickListener {
+            findNavController().navigate(R.id.action_movieInfoFragment_to_movieReviewFragment)
         }
     }
 }

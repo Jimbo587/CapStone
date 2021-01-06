@@ -23,8 +23,8 @@ class MovieRateFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //TODO: change button value and navigate
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        view.findViewById<Button>(R.id.btnSubmit).setOnClickListener {
+            findNavController().navigate(R.id.action_movieRateFragment_to_movieReviewFragment)
         }
     }
 }
