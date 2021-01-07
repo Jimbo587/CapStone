@@ -20,14 +20,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        navController = findNavController(R.id.nav_host_fragment)
-
-        fab.setOnClickListener {
-            navController.navigate(
-                R.id.action_FirstFragment_to_SecondFragment
-            )
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
         }
-        fabToggler()
+
     }
 
     private fun fabToggler() {

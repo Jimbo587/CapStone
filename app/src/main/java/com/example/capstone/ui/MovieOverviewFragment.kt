@@ -25,8 +25,12 @@ class MovieOverviewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.fab).setOnClickListener {
+        view.findViewById<Button>(R.id.btn_next).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
+
+        view.findViewById<Button>(R.id.btn_view).setOnClickListener{
+            findNavController().navigate(R.id.action_FirstFragment_to_movieInfoFragment)
         }
     }
 }
