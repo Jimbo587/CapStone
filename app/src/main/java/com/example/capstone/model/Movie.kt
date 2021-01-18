@@ -13,5 +13,31 @@ class Movie (
     @SerializedName("vote_average")
     var rating: String? = null,
     var overview: String? = null
+
+            id
+
+            title
+
+            year
+
+            length:
+
+    rating
+
+    rating_votes
+
+    poster
+
+    plot
+
+    trailer
+
+    cast
+
+    actor
+
+    actor_id
+
+    character
 ){
 }
