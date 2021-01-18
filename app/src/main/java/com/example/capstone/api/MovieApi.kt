@@ -14,13 +14,11 @@ class MovieApi {
          * @return [TriviaApiService] The service class off the retrofit client.
          */
 
-        private val baseUrl = "https://imdb-internet-movie-database-unofficial.p.rapidapi.com/"
-        private val apiKey= "4f81bfe985mshb5ac52b0e11dc86p19ce51jsn772bc5134e2d"
+        private val baseUrl = "https://imdb-api.com/en/API/"
 
         class MovieInterceptor: Interceptor {
             override fun intercept(chain: Interceptor.Chain): Response {
-                val url = chain.request().url.newBuilder().addQueryParameter("api_key",
-                        apiKey).build()
+                val url = chain.request().url.newBuilder().build()
                 val newRequest = chain.request().newBuilder().url(url).build()
                 return chain.proceed(newRequest)
             }

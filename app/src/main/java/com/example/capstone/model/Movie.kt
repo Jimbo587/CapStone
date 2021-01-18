@@ -3,41 +3,21 @@ package com.example.capstone.model
 import com.google.gson.annotations.SerializedName
 
 class Movie (
+    @SerializedName("id")
+    var id: String? = null,
+    @SerializedName("title")
     var title: String? = null,
-    @SerializedName("backdrop_path")
-    var backDropPath: String? = null,
-    @SerializedName("poster_path")
-    var posterPath: String? = null,
-    @SerializedName("release_date")
+    @SerializedName("originalTitle")
+    var originalTitle: String? = null,
+    @SerializedName("fullTitle")
+    var fullTitle: String? = null,
+    @SerializedName("image")
+    var image: String? = null,
+    @SerializedName("releaseDate")
     var releaseDate: String? = null,
-    @SerializedName("vote_average")
-    var rating: String? = null,
-    var overview: String? = null
-
-            id
-
-            title
-
-            year
-
-            length:
-
-    rating
-
-    rating_votes
-
-    poster
-
-    plot
-
-    trailer
-
-    cast
-
-    actor
-
-    actor_id
-
-    character
+    @SerializedName("runTimeStr")
+    var runTimeStr: String? = null,
+    @SerializedName("plot")
+    var plot: String? = null,
 ){
 }

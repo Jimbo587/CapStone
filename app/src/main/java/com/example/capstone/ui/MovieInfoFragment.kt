@@ -6,27 +6,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.capstone.R
+import com.example.capstone.databinding.FragmentMovieInfoBinding
+import com.example.capstone.viewmodel.MovieViewModel
 
 class MovieInfoFragment : Fragment() {
+    private lateinit var binding: FragmentMovieInfoBinding
+    private val viewModel: MovieViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_info, container, false)
+        binding = FragmentMovieInfoBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.btnRate).setOnClickListener {
-            findNavController().navigate(R.id.action_movieInfoFragment_to_movieRateFragment)
-        }
+        initViews()
+    }
 
-        view.findViewById<Button>(R.id.btnReview).setOnClickListener {
-            findNavController().navigate(R.id.action_movieInfoFragment_to_movieReviewFragment)
+    private fun initViews() {
+        viewModel.getCurrentMovie().value?.let {
+            binding.tvTitle.text = it.fullTitle
+            binding.tvReleasedate.text = it.releaseDate
+            binding.tvRunTime.text = it.runTimeStr
+            binding.tvPlot.text = it.plot
+
+            Glide.with(requireContext()).load(it.image).into(binding.ivMoviebg)
         }
     }
 }

@@ -24,7 +24,7 @@
         android:layout_marginTop="50dp" />
 
     <TextView
-        android:id="@+id/tvGenre"
+        android:id="@+id/tvReleasedate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
@@ -33,19 +33,19 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/tvYear"
+        android:id="@+id/tvRunTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvGenre"
+        app:layout_constraintTop_toBottomOf="@id/tvReleasedate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/tvRating"
+        android:id="@+id/tvPlot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvYear"
+        app:layout_constraintTop_toBottomOf="@id/tvRunTime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
@@ -58,7 +58,7 @@
         android:text="@string/rating"
         app:layout_constraintEnd_toStartOf="@id/btnReview"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvRating" />
+        app:layout_constraintTop_toBottomOf="@id/tvPlot" />
 
     <Button
         android:id="@+id/btnReview"
@@ -68,7 +68,7 @@
         android:text="@string/review"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnRate"
-        app:layout_constraintTop_toBottomOf="@id/tvRating" />
+        app:layout_constraintTop_toBottomOf="@id/tvPlot" />
 
 
 
