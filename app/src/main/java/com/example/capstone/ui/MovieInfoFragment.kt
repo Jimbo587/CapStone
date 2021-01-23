@@ -1,15 +1,12 @@
 package com.example.capstone.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.capstone.R
 import com.example.capstone.databinding.FragmentMovieInfoBinding
 import com.example.capstone.viewmodel.MovieViewModel
 
@@ -34,7 +31,7 @@ class MovieInfoFragment : Fragment() {
 
     private fun initViews() {
         viewModel.getCurrentMovie().value?.let {
-            binding.tvTitle.text = it.fullTitle
+            binding.tvTitle.text = it.title
             binding.tvReleasedate.text = it.releaseDate
             binding.tvRunTime.text = it.runTimeStr
             binding.tvPlot.text = it.plot

@@ -35,6 +35,7 @@ class MovieAdapter(private val movies: List<Movie>, private val onClick: (Movie)
         }
 
         fun bind(movie: Movie) {
+            binding.tvTitle.text = movie.title
             Glide.with(context).load(movie.image).into(binding.ivMovie)
         }
     }

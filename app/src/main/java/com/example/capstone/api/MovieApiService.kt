@@ -9,6 +9,6 @@ interface MovieApiService {
     @GET("SearchMovie/k_5dvc5nl3/{expression}")
     suspend fun getMovies(@Path("expression") movie: String): MovieOverview
 
-    @GET("Title/k_5dvc5nl3/{id}")
+    @GET("Title/k_5dvc5nl3/{id}/Ratings")
     suspend fun getMovieInfo(@Path("id") id: String): Movie
 }

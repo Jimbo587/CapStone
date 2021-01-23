@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.fragment_movie_overview.*
 class MovieOverviewFragment : Fragment() {
 
     private val movies = arrayListOf<Movie>()
+//    private lateinit var movieInfo: Movie
     private lateinit var movieAdapter: MovieAdapter
     private val viewModel: MovieViewModel by activityViewModels()
     private lateinit var binding: FragmentMovieOverviewBinding
@@ -40,7 +41,7 @@ class MovieOverviewFragment : Fragment() {
         movieAdapter = MovieAdapter(movies, ::initViews)
         setSubmitClick()
         observeMovie()
-        binding.rvMovieList.layoutManager = GridLayoutManager(activity, 2)
+        binding.rvMovieList.layoutManager = GridLayoutManager(activity, 3)
         binding.rvMovieList.adapter = movieAdapter
     }
 
@@ -55,14 +56,17 @@ class MovieOverviewFragment : Fragment() {
     private fun initViews(movie: Movie){
         Log.i("MOV", "going to set ${movie.title!!} as current movie")
         viewModel.setCurrentMovie(movie)
+        val code = movie.id
+        viewModel.getMovieId(code.toString())
         findNavController().navigate(R.id.action_FirstFragment_to_movieInfoFragment)
+        Log.i("MOV", viewModel.getCurrentMovie().value!!.id!!)
         Log.i("MOV", viewModel.getCurrentMovie().value!!.title!!)
+        Log.i("MOV", viewModel.getCurrentMovie().value!!.image!!)
     }
 
     private fun setSubmitClick(){
         binding.btnSubmit.setOnClickListener{
             val title  = binding.etTitle.text!!
-
             if (title.isEmpty()) {
                 Snackbar.make(btnSubmit, "The title is invalid",
                     Snackbar.LENGTH_LONG)
@@ -70,7 +74,13 @@ class MovieOverviewFragment : Fragment() {
                 return@setOnClickListener
             }
             viewModel.getMovies(title.toString())
-
         }
     }
+
+//    private fun getMovieId(movie: Movie){
+//        for (item in movies){
+//            val code = movie.id
+//                viewModel.getMovieId(code.toString())
+//        }
+//    }
 }

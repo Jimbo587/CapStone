@@ -2,7 +2,7 @@ package com.example.capstone.model
 
 import com.google.gson.annotations.SerializedName
 
-class Movie (
+class MovieInfo(
     @SerializedName("id")
     var id: String? = null,
     @SerializedName("title")
@@ -18,7 +18,6 @@ class Movie (
     @SerializedName("runTimeStr")
     var runTimeStr: String? = null,
     @SerializedName("plot")
-    var plot: String? = null,
-    var results: List<Movie>? = null
+    var plot: String? = null
 ){
 }
