@@ -20,5 +20,10 @@ class MovieReviewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //TODO: change button value and navigate
+        view.findViewById<Button>(R.id.btnSubmitReview).setOnClickListener {
+            findNavController().navigate(R.id.action_movieReviewFragment_to_FirstFragment)
+        }
     }
 }
