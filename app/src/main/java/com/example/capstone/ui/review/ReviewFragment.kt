@@ -1,13 +1,12 @@
 package com.example.capstone.ui.review
 
 import android.os.Bundle
+import android.view.*
+import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.R
@@ -40,25 +39,15 @@ class ReviewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initRv()
-        observeAddGameResult()
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.delete -> {
-                viewModel.deleteAllReviews()
-                reviewAdapter.notifyDataSetChanged()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-        return true
+        observeAddReview()
     }
 
     private fun initRv() {
 
         reviewAdapter = ReviewAdapter(review)
         viewManager = LinearLayoutManager(activity)
+
+        createItemTouchHelper().attachToRecyclerView(rvReview)
 
         rvReview.apply {
             setHasFixedSize(true)
@@ -67,7 +56,7 @@ class ReviewFragment : Fragment() {
         }
     }
 
-    private fun observeAddGameResult(){
+    private fun observeAddReview(){
         viewModel.review.observe(viewLifecycleOwner, Observer { review ->
             this@ReviewFragment.review.clear()
             this@ReviewFragment.review.addAll(review)
@@ -75,13 +64,26 @@ class ReviewFragment : Fragment() {
         })
     }
 
-    private fun deleteGamesFromDatabase(): Boolean {
-        mainScope.launch {
-            withContext(Dispatchers.IO) {
-                reviewRepository.deleteAllReviews()
+    private fun createItemTouchHelper(): ItemTouchHelper {
+        val callback = object :
+                ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+
+            // Enables or Disables the ability to move items up and down.
+            override fun onMove(
+                    recyclerView: RecyclerView,
+                    viewHolder: RecyclerView.ViewHolder,
+                    target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
             }
-            observeAddGameResult()
+
+            // Callback triggered when a user swiped an item.
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                val reviewToDelete = review[position]
+                viewModel.deleteReview(reviewToDelete)
+            }
         }
-        return true
+        return ItemTouchHelper(callback)
     }
 }

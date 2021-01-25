@@ -23,10 +23,10 @@ class ReviewViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    fun deleteAllReviews(){
+    fun deleteReview(review: Review){
         ioScope.launch {
-            withContext(Dispatchers.IO) {
-                reviewRepository.deleteAllReviews()
+            withContext(Dispatchers.IO){
+                reviewRepository.deleteReview(review)
             }
         }
     }

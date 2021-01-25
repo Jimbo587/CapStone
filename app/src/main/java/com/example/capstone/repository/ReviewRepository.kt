@@ -7,7 +7,7 @@ import com.example.capstone.dao.ReviewDao
 import com.example.capstone.database.ReviewDatabase
 import com.example.capstone.model.Review
 
-public class ReviewRepository(context: Context) {
+class ReviewRepository(context: Context) {
     private var reviewDao: ReviewDao
 
     init {
@@ -23,6 +23,7 @@ public class ReviewRepository(context: Context) {
         reviewDao.insertReview(review)
     }
 
-    suspend fun deleteAllReviews() =
-            reviewDao.deleteAllReviews()
+    suspend fun deleteReview(review: Review) {
+        reviewDao.deleteReview(review)
+    }
 }
