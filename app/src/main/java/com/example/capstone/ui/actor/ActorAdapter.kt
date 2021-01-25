@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.capstone.R
 import com.example.capstone.databinding.ItemActorBinding
-import com.example.capstone.databinding.ItemMovieBinding
 import com.example.capstone.model.Actor
 
 class ActorAdapter(private val actor: List<Actor>, private val onClick: (Actor) -> Unit) :

@@ -2,7 +2,6 @@ package com.example.capstone.ui.review
 
 import android.os.Bundle
 import android.view.*
-import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -17,8 +16,6 @@ import com.example.capstone.viewmodel.ReviewViewModel
 import kotlinx.android.synthetic.main.fragment_movie_review.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class ReviewFragment : Fragment() {
     private var review = arrayListOf<Review>()

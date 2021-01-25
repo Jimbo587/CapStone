@@ -54,9 +54,7 @@ class ActorOverviewFragment: Fragment() {
     }
 
     private fun initViews(actor: Actor){
-//      Log.i("MOV", "going to set ${movie.title!!} as current movie")
         viewModel.setCurrentActor(actor)
-        findNavController().navigate(R.id.action_FirstFragment_to_movieInfoFragment)
     }
 
     private fun setSubmitClick(){

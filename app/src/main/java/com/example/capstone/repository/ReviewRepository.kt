@@ -2,7 +2,6 @@ package com.example.capstone.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.capstone.dao.ReviewDao
 import com.example.capstone.database.ReviewDatabase
 import com.example.capstone.model.Review

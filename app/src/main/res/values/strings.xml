@@ -28,6 +28,12 @@
     <!-- MovieInfo -->
     <string name="review">Reviews</string>
     <string name="rating">Rating</string>
+    <string name="titleText">Title:</string>
+    <string name="runtimeText">Runtime:</string>
+    <string name="plotText">Plot of the movie:</string>
+    <string name="actorText">Actors/Actress:</string>
+    <string name="nominations">Nominations amount:</string>
+    <string name="releasedateText">Release Date:</string>
 
     <!-- Rating -->
     <string name="usernameRating">Username</string>
@@ -36,9 +42,10 @@
     <string name="reviewRating">Review</string>
 
     <!-- Review -->
-    <string name="username">Username:</string>
-    <string name="movie">Movie:</string>
-    <string name="ratingTitle">Rating:</string>
-    <string name="reviewTitle">Review:</string>
+    <string name="username">Username: </string>
+    <string name="movie">Movie: </string>
+    <string name="ratingTitle">Rating: </string>
+    <string name="reviewTitle">Review: </string>
     <string name="home">Home</string>
+
 </resources>

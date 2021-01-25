@@ -5,8 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.capstone.api.MovieApi
 import com.example.capstone.api.MovieApiService
 import com.example.capstone.model.Actor
-import com.example.capstone.model.Movie
-import com.example.capstone.model.MovieInfo
 import kotlinx.coroutines.withTimeout
 
 class ActorRepository {

@@ -18,10 +18,6 @@ class ActorViewModel(): ViewModel() {
 
     private val _errorText: MutableLiveData<String> = MutableLiveData()
 
-    fun getCurrentActor(): LiveData<Actor> {
-        return currentActor
-    }
-
     fun setCurrentActor(actor: Actor){
         currentActor.value = actor
     }

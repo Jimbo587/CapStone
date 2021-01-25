@@ -15,8 +15,12 @@ class MovieInfo (
         var image: String? = null,
         @SerializedName("releaseDate")
         var releaseDate: String? = null,
-        @SerializedName("runTimeStr")
+        @SerializedName("runtimeStr")
         var runTimeStr: String? = null,
+        @SerializedName("awards")
+        var awards: String? = null,
+        @SerializedName("stars")
+        var stars: String? = null,
         @SerializedName("plot")
         var plot: String? = null
 ) {

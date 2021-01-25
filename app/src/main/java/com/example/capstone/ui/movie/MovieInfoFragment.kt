@@ -40,6 +40,8 @@ class MovieInfoFragment : Fragment() {
                 binding.tvReleasedate.text = it.releaseDate
                 binding.tvRunTime.text = it.runTimeStr
                 binding.tvPlot.text = it.plot
+                binding.tvAwards.text = it.awards
+                binding.tvActor.text = it.stars
 
                 Glide.with(requireContext()).load(it.image).into(binding.ivMoviebg)
             }
