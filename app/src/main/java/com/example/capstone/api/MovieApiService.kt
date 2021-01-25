@@ -1,5 +1,6 @@
 package com.example.capstone.api
 
+import com.example.capstone.model.Actor
 import com.example.capstone.model.Movie
 import com.example.capstone.model.MovieInfo
 import retrofit2.http.GET
@@ -11,4 +12,7 @@ interface MovieApiService {
 
     @GET("Title/k_5dvc5nl3/{id}/Ratings")
     suspend fun getMovieInfo(@Path("id") id: String): MovieInfo
+
+    @GET("SearchName/k_5dvc5nl3/{expression}")
+    suspend fun getActors(@Path("expression") actor: String): Actor
 }

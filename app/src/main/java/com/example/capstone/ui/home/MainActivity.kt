@@ -1,5 +1,6 @@
 package com.example.capstone.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -7,9 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.capstone.R
+import com.example.capstone.databinding.ActivityMainBinding
+import com.example.capstone.ui.movie.MovieOverviewFragment
 import com.example.capstone.viewmodel.MovieViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 

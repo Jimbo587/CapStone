@@ -41,6 +41,7 @@ class MovieOverviewFragment : Fragment() {
         movieAdapter = MovieAdapter(movies, ::initViews)
         setSubmitClick()
         observeMovie()
+        setActorClick()
         binding.rvMovieList.layoutManager = GridLayoutManager(activity, 3)
         binding.rvMovieList.adapter = movieAdapter
     }
@@ -77,4 +78,11 @@ class MovieOverviewFragment : Fragment() {
             viewModel.getMovies(title.toString())
         }
     }
+
+    private fun setActorClick(){
+        ivActor.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_actorOverviewFragment)
+        }
+    }
+
 }

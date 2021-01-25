@@ -6,6 +6,7 @@ import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +40,7 @@ class ReviewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initRv()
+        onHome()
         observeAddReview()
     }
 
@@ -85,5 +87,11 @@ class ReviewFragment : Fragment() {
             }
         }
         return ItemTouchHelper(callback)
+    }
+
+    private fun onHome(){
+        btnHome.setOnClickListener {
+            findNavController().navigate(R.id.action_movieReviewFragment_to_FirstFragment)
+        }
     }
 }
