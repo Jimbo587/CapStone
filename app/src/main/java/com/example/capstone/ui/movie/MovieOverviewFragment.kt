@@ -1,7 +1,6 @@
-package com.example.capstone.ui
+package com.example.capstone.ui.movie
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +14,7 @@ import com.example.capstone.model.Movie
 import com.example.capstone.model.MovieInfo
 import com.example.capstone.viewmodel.MovieViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_movie_info.*
 import kotlinx.android.synthetic.main.fragment_movie_overview.*
 
 /**

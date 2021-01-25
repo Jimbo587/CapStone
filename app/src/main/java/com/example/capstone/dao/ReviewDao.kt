@@ -12,9 +12,6 @@ interface ReviewDao {
     @Insert
     suspend fun insertReview(review: Review)
 
-    @Delete
-    suspend fun deleteReview(review: Review)
-
-    @Update
-    suspend fun updateReview(review: Review)
+    @Query("DELETE FROM reviewTable")
+    suspend fun deleteAllReviews()
 }

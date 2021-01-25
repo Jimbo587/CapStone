@@ -1,16 +1,17 @@
-package com.example.capstone.ui
+package com.example.capstone.ui.movie
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.capstone.R
 import com.example.capstone.databinding.FragmentMovieInfoBinding
-import com.example.capstone.model.MovieInfo
 import com.example.capstone.viewmodel.MovieViewModel
+import kotlinx.android.synthetic.main.fragment_movie_info.*
 
 class MovieInfoFragment : Fragment() {
     private lateinit var binding: FragmentMovieInfoBinding
@@ -27,8 +28,9 @@ class MovieInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initViews()
+        setRateClick()
+        setReviewClick()
     }
 
     private fun initViews() {
@@ -42,7 +44,17 @@ class MovieInfoFragment : Fragment() {
                 Glide.with(requireContext()).load(it.image).into(binding.ivMoviebg)
             }
         })
+    }
 
+    private fun setRateClick(){
+        btnRate.setOnClickListener {
+            findNavController().navigate(R.id.action_movieInfoFragment_to_movieRateFragment)
+        }
+    }
 
+    private fun setReviewClick(){
+        btnReview.setOnClickListener {
+            findNavController().navigate(R.id.action_movieInfoFragment_to_movieReviewFragment)
+        }
     }
 }

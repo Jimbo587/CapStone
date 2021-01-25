@@ -23,7 +23,6 @@ public class ReviewRepository(context: Context) {
         reviewDao.insertReview(review)
     }
 
-    suspend fun updateReview(review: Review) {
-        reviewDao.updateReview(review)
-    }
+    suspend fun deleteAllReviews() =
+            reviewDao.deleteAllReviews()
 }

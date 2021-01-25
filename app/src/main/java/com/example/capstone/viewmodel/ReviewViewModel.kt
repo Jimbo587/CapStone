@@ -8,6 +8,7 @@ import com.example.capstone.repository.ReviewRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ReviewViewModel(application: Application): AndroidViewModel(application) {
 
@@ -19,6 +20,14 @@ class ReviewViewModel(application: Application): AndroidViewModel(application) {
     fun  insertReview(review: Review) {
         ioScope.launch {
             reviewRepository.insertReview(review)
+        }
+    }
+
+    fun deleteAllReviews(){
+        ioScope.launch {
+            withContext(Dispatchers.IO) {
+                reviewRepository.deleteAllReviews()
+            }
         }
     }
 }

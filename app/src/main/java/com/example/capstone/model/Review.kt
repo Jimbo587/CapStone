@@ -9,6 +9,9 @@ data class Review (
     @ColumnInfo(name = "name")
     var name: String,
 
+    @ColumnInfo(name = "title")
+    var title: String,
+
     @ColumnInfo(name = "rating")
     var rating: Int,
 

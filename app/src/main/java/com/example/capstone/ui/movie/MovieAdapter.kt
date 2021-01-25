@@ -1,4 +1,4 @@
-package com.example.capstone.ui
+package com.example.capstone.ui.movie
 
 import android.content.Context
 import android.view.LayoutInflater

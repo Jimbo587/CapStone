@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/llReview"
@@ -22,14 +22,16 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/tvPlot"
+            android:id="@+id/tvRating"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
 
         <TextView
             android:id="@+id/tvReview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:maxLines="10"/>
 
     </LinearLayout>
 
