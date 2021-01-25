@@ -36,15 +36,17 @@ class AddReviewFragment : Fragment() {
     private fun onAddReview(){
         val reviewer = etName.text.toString()
         val title = etMovie.text.toString()
-        val rating = etRating.text.toString()
+        val rating = etRating.text.toString().toInt()
         val review = etReview.text.toString()
 
-        if (reviewer.isNotBlank() || title.isNotBlank() || rating.isNotBlank() || review.isNotBlank()){
-            viewModel.insertReview(Review(reviewer, title, rating.toInt(), review))
+        if (rating > 10 || rating < 1){
+            Snackbar.make(btnSubmitReview, "Rating is not correct! Please try again", Snackbar.LENGTH_LONG).show()
+        } else if(reviewer.isBlank() || title.isBlank() || review.isBlank()) {
+            Snackbar.make(btnSubmitReview, "Please fill in all the fields", Snackbar.LENGTH_LONG).show()
+        } else {
+            viewModel.insertReview(Review(reviewer, title, rating, review))
 
             findNavController().navigate(R.id.action_movieRateFragment_to_movieReviewFragment)
-        } else {
-            Snackbar.make(btnSubmitReview, "Please fill in all the fields", Snackbar.LENGTH_LONG).show()
         }
     }
 }
